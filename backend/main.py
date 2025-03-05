@@ -24,3 +24,7 @@ def add_entry(content: str, db: Session = Depends(get_db)):
     db.refresh(entry)  # Refresh object with DB-generated values
     return {"message": "Journal entry added!", "id": entry.id}
 
+@app.get("/entries/")
+def get_entries(db: Session = Depends(get_db)):
+    entries = db.query(JournalEntry).all()
+    return entries
