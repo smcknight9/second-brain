@@ -40,6 +40,5 @@ It allows users to write and retrieve journal entries via a **REST API** or **Gr
 ```sh
 git clone https://github.com/YOUR_GITHUB_USERNAME/second-brain.git
 cd second-brain
+docker compose up --build -d
 ```
-
-### 3. docker compose up --build -d
