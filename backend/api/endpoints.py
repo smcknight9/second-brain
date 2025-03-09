@@ -5,7 +5,6 @@ from backend.models.journal import JournalEntry
 from backend.schemas.journal import JournalEntryCreate  
 
 router = APIRouter()
-
 @router.post("/add_entry/")
 def add_entry(entry_data: JournalEntryCreate, db: Session = Depends(get_db)):
     entry = JournalEntry(title=entry_data.title, content=entry_data.content)
