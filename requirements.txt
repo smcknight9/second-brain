@@ -7,3 +7,4 @@ alembic # database versioning
 sqlalchemy 
 typer
 requests
+pydantic-settings
