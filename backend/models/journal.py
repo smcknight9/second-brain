@@ -6,4 +6,5 @@ class JournalEntry(Base):
 
 	id = Column(Integer, primary_key=True, autoincrement=True)
 	content = Column(Text, nullable=False)
+	title = Column(String, nullable=False)
 	created_at = Column(DateTime, default=func.now(), server_default=func.now())
