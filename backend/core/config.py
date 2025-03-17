@@ -1,10 +1,27 @@
+"""
+Configuration module.
+
+This module defines application settings using Pydantic's BaseSettings.
+The settings are loaded from environment variables and/or a .env file.
+"""
+
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = "postgresql://user:password@secondbrain_db:5432/secondbrain_db"
+    """
+    Application settings loaded from environment variables.
+
+    Attributes:
+        DATABASE_URL (str): The database connection URL.
+    """
+    DATABASE_URL: str = "postgresql://user:password@secondbrain:5432/secondbrain"
 
     class Config:
-        env_file = "../../../.env"
+        """
+        Pydantic configuration for Settings.
 
+        Specifies the .env file to load environment variables from.
+        """
+        env_file = "../../../.env"
 
 settings = Settings()
